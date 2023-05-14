@@ -1,9 +1,0 @@
-.idea
-./previs-studio/node_modules
-./previs-studio/.env
-./server/node_modules
-./server/.env
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-yarn.lock
