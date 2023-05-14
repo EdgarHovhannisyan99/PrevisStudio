@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node -r dotenv/config ./bin/_www",
+    "migrate": "node -r esm -r dotenv/config ./bin/migrate.js",
     "dev": "nodemon  -r esm -r dotenv/config ./bin/www"
   },
   "dependencies": {
@@ -15,7 +16,10 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
+    "jsonwebtoken": "^9.0.0",
+    "md5": "^2.3.0",
     "morgan": "~1.9.1",
+    "mysql2": "^3.3.1",
     "nodemon": "^2.0.22",
     "sequelize": "^6.31.1"
   }
