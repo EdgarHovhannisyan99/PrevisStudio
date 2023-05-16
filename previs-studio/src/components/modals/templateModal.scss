@@ -1,0 +1,86 @@
+.custom-template-modal {
+  padding: 0;
+  position: relative;
+}
+
+.template-modal {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 15px;
+  .modal-video {
+    display: flex;
+    video {
+      border-radius: 15px;
+    }
+  }
+  .about-modal-video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .about-modal-video-content {
+      width: 80%;
+    }
+    h4 {
+      font-weight: 600;
+    }
+  }
+
+  .template-modal-sizes {
+    display: flex;
+    justify-content: center;
+
+    .size-block-div {
+      text-align: center;
+
+      span {
+        font-size: 14px;
+        color: #111036;
+        font-weight: 100;
+      }
+    }
+
+    .size-block {
+      margin: 0 10px;
+      background-color: #F7F7F7;
+      height: 35px;
+      border: 1px solid #DCDCE2;
+      border-radius: 7%;
+    }
+
+    ._16\:9 {
+      width: 60px;
+    }
+
+    ._4\:9 {
+      width: 29px;
+    }
+
+    ._9\:16 {
+      width: 20px;
+    }
+
+    ._1\:1 {
+      width: 35px;
+    }
+
+  }
+
+  .template-modal-button-div {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+}
+
+.modal-content{
+  border-radius: 15px !important;
+  max-width: 1048px;
+  .modal-close-button {
+    z-index: 999;
+    position: absolute;
+    right: -25px;
+    top: -28px;
+    cursor: pointer;
+  }
+}
