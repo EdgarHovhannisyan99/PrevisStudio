@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    $--bs-gutter-x: 0;
+    $--bs-gutter-y: 0;
+}
+
 body {
     background-color: #F0F0F3;
     font-family: "Lato", sans-serif;
@@ -19,6 +24,11 @@ body {
     min-height: 100vh;
 }
 
+.container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
 a {
     text-decoration: none;
     display: flex;
@@ -28,7 +38,6 @@ a {
 }
 
 video {
-    border-radius: 10px !important;
     height: 100% !important;
 }
 

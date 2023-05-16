@@ -25,6 +25,10 @@ Templates.init(
 		duration: {
 			type: DataTypes.STRING,
 			allowNull: true,
+		},
+		play: {
+			type: DataTypes.STRING,
+			allowNull: true,
 		}
 	},
 	{

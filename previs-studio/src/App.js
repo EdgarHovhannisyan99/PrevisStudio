@@ -1,7 +1,9 @@
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import Scenes from "./pages/scenes/Scenes";
 import Wrapper from "./components/wrapper/Wrapper";
-import './assets/styles/styles.css'
+import 'bootstrap/dist/css/bootstrap.css';
+import './assets/styles/styles.scss'
+
 function App() {
   return (
     <BrowserRouter>
@@ -10,7 +12,6 @@ function App() {
           <Route element={<Wrapper/>}>
           <Route path="/scenes" element={<Scenes/>} />
           </Route>
-
       </Routes>
     </BrowserRouter>
   );

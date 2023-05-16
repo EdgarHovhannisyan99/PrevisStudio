@@ -1,30 +1,39 @@
 import React, {useEffect, useRef, useState} from 'react';
 import ReactPlayer from "react-player";
 import {useDispatch, useSelector} from "react-redux";
-import {getAllTemplates} from "../../store/actions/templates";
+import {clearSingleTemplate, getAllTemplates, getSingleTemplate} from "../../store/actions/templates";
+import TemplateModal from "../../components/modals/TemplateModal";
 
 function Scenes(props) {
-    const playerRef = useRef(null);
-    const [play, setPlay] = useState(false)
-    const templates = useSelector(store => store.templates.templatesList)
+    const playerRefs = useRef([]);
+    const [playId, setPlayId] = useState(0)
+    const [currentId, setCurrentId] = useState(null)
+    const [showTemplateModal, setShowTemplate] = useState(false)
+    let templates = useSelector(store => store.templates.templatesList)
+    const dispatch = useDispatch()
 
-    console.log(templates)
-    const dispatch  = useDispatch()
     useEffect(() => {
         dispatch(getAllTemplates())
     }, [])
 
-    const handlePlay = () => {
-        if(!play){
-            setPlay(true)
-        }
+    const handlePlay = (ev) => {
+        setPlayId(+ev.currentTarget.id)
     }
 
-    const handleStop = () => {
-        if(play){
-            setPlay(false)
-            playerRef.current.seekTo(0)
-        }
+    const handleStop = (index) => {
+       playerRefs.current[index].seekTo(0)
+        setPlayId(0)
+    }
+
+    const handleOpen = (ev) => {
+        setCurrentId(ev.currentTarget.id)
+        dispatch(getSingleTemplate(ev.currentTarget.id));
+        setShowTemplate(true)
+    }
+
+    const handleClose = () => {
+        setShowTemplate(false)
+        dispatch(clearSingleTemplate())
     }
 
     return (
@@ -36,28 +45,35 @@ function Scenes(props) {
                 </div>
                 <div className="service_cards">
                     {templates && templates.map(template => (
-                    <div className="card_item">
-                        <div className="item_image video-player" onMouseEnter={handlePlay} onMouseLeave={handleStop}>
-                            <ReactPlayer
-                                ref={playerRef}
-                                url={template.name}
-                                playing={play}
-                                controls={false}
-                                volume={0}
-                                width="640px"
-                                height="220px"
-                                style={{borderRadius: '20px'}}
-                            />
-                        </div>
+                        <div className="card_item">
+                            <div id={template.id} onClick={handleOpen} className="item_image video-player"
+                                 onMouseEnter={handlePlay} onMouseLeave={ev => handleStop(ev.currentTarget.id)}>
+                                <ReactPlayer
+                                    ref={(player) => (playerRefs.current[template.id] = player)}
+                                    url={template.name}
+                                    playing={playId === template.id}
+                                    controls={false}
+                                    volume={0}
+                                    width="640px"
+                                    height="220px"
+                                    playbackRate={1.0}
+                                    style={{borderRadius: '20px'}}
+                                />
+                            </div>
 
-                        <div className="item_texts">
-                            <div className="item_title">Animation 1</div>
-                            <div className="item_duration"> Duration: 0:52 min.</div>
+                            <div className="item_texts">
+                                <div className="item_title">Animation 1</div>
+                                <div className="item_duration"> Duration: 0:52 min.</div>
+                            </div>
                         </div>
-                    </div>
                     ))}
                 </div>
+
+                <TemplateModal setId={setCurrentId} templateId={currentId} show={showTemplateModal}
+                               setShow={handleClose}/>
+
             </div>
+
         </>
     );
 }

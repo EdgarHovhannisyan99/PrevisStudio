@@ -14,4 +14,16 @@ export class TemplatesController {
         }
     }
 
+    static getSingleTemplate = async (req, res, next) => {
+        try {
+            const { id } = req.params;
+            const template = await Templates.findByPk(id)
+            res.json({
+                template
+            })
+        }catch (e) {
+            next(e)
+        }
+    }
+
 }
