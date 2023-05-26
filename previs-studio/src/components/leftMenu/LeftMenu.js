@@ -5,7 +5,7 @@ function LeftMenu(props) {
     return (
         <div className="menu_sidebar">
             <div className="menu_list">
-                <a href="#"
+                <a href="/"
                    className="logo">
                     <svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fillRule="evenodd" clipRule="evenodd"
@@ -19,7 +19,7 @@ function LeftMenu(props) {
                               fill="#EB555C"/>
                     </svg>
                 </a>
-                <a href="#"
+                <a href="scenes"
                    className="scenes_menu">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -36,7 +36,7 @@ function LeftMenu(props) {
                             fill="#A8A6BA"/>
                     </svg>
                     Scenes </a>
-                <a href="#"
+                <a href="/start"
                    className="start_menu_button">
                     <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path

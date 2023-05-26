@@ -14,7 +14,8 @@ export default function* watcher() {
 
 function* handleGetAllTemplates(action) {
     try {
-        const {data} = yield call(templates.getAllTemplates)
+        const {formData = {}} = action.payload
+        const {data} = yield call(templates.getAllTemplates, formData.search, formData.filter)
         yield put({
             type: GET_ALL_TEMPLATES_SUCCESS,
             payload: {

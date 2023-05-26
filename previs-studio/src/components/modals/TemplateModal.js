@@ -6,9 +6,11 @@ import './templateModal.scss'
 import {useSelector} from "react-redux";
 import {isEmpty} from "lodash";
 import {AiOutlineCloseCircle} from "react-icons/ai";
+import {useNavigate} from 'react-router-dom';
 
 
-function TemplateModal({show, setShow}) {
+function TemplateModal({show, setShow, templateId}) {
+    const navigate = useNavigate()
     const template = useSelector((store) => store.templates.singleTemplate);
 
     return (
@@ -17,7 +19,7 @@ function TemplateModal({show, setShow}) {
                 <>
                     <Modal centered show={show} onHide={setShow} size='xl' className='custom-template-modal'>
                         <div className='modal-close-button' onClick={setShow}>
-                            <AiOutlineCloseCircle size={35}  color='#FFFFFF'/>
+                            <AiOutlineCloseCircle size={35} color='#FFFFFF'/>
                         </div>
                         <div className='template-modal'>
                             <div className='modal-video'>
@@ -54,7 +56,9 @@ function TemplateModal({show, setShow}) {
                                         promotional
                                         video is what you need. </p>
                                     <div className='template-modal-button-div'>
-                                        <Button>Edit this template </Button>
+                                        <Button onClick={() => navigate(`/scenes/${templateId}`)}>
+                                            Edit this template
+                                        </Button>
                                     </div>
                                 </div>
                             </div>

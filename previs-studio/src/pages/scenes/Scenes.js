@@ -3,6 +3,7 @@ import ReactPlayer from "react-player";
 import {useDispatch, useSelector} from "react-redux";
 import {clearSingleTemplate, getAllTemplates, getSingleTemplate} from "../../store/actions/templates";
 import TemplateModal from "../../components/modals/TemplateModal";
+import moment from "moment";
 
 function Scenes(props) {
     const playerRefs = useRef([]);
@@ -21,7 +22,7 @@ function Scenes(props) {
     }
 
     const handleStop = (index) => {
-       playerRefs.current[index].seekTo(0)
+        playerRefs.current[index].seekTo(0)
         setPlayId(0)
     }
 
@@ -62,13 +63,14 @@ function Scenes(props) {
                             </div>
 
                             <div className="item_texts">
-                                <div className="item_title">Animation 1</div>
-                                <div className="item_duration"> Duration: 0:52 min.</div>
+                                <div className="item_title">{template.title}</div>
+                                <div
+                                    className="item_duration"> Duration: {template.duration ? (moment.utc(template.duration * 1000).format('mm:ss')) : ''} sec.
+                                </div>
                             </div>
                         </div>
                     ))}
                 </div>
-
                 <TemplateModal setId={setCurrentId} templateId={currentId} show={showTemplateModal}
                                setShow={handleClose}/>
 

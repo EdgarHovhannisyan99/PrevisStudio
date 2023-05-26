@@ -1,0 +1,2 @@
+nexrender-cli-win64.exe --file myjob.json
+
