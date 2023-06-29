@@ -51,7 +51,7 @@ function Scenes(props) {
                                  onMouseEnter={handlePlay} onMouseLeave={ev => handleStop(ev.currentTarget.id)}>
                                 <ReactPlayer
                                     ref={(player) => (playerRefs.current[template.id] = player)}
-                                    url={template.name}
+                                    url={template.src}
                                     playing={playId === template.id}
                                     controls={false}
                                     volume={0}

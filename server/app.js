@@ -36,4 +36,5 @@ app.use((err, req, res, next) => {
     errors: err.errors,
   });
 });
-module.exports = app;
+
+export default app

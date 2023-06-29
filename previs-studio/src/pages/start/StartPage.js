@@ -18,6 +18,7 @@ function StartPage(props) {
     useEffect(() => {
         dispatch(getAllTemplates(formData))
     }, [])
+
     const handlePlay = (ev) => {
         setPlayId(+ev.currentTarget.id)
     }
@@ -162,7 +163,7 @@ function StartPage(props) {
                                  onMouseLeave={ev => handleStop(ev.currentTarget.id)}>
                                 <ReactPlayer
                                     ref={(player) => (playerRefs.current[template.id] = player)}
-                                    url={template.name}
+                                    url={template.src}
                                     playing={playId === template.id}
                                     controls={false}
                                     volume={0}

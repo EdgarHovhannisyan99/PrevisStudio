@@ -1,87 +1,71 @@
 {
-"template": {
-"src": "file:///C:/Users/karen.movsesyan/OneDrive/Previs/Previs.Studio/Production/Templates/Test_Scenes/scene-01/Ae/animation-01.aep",
-"composition": "main"
-},
-"assets": [
-
-
-{
-"src": "file:///C:/Users/karen.movsesyan/OneDrive/Previs/Previs.Studio/Production/Templates/Test_Scenes/scene-01/Ae/Sources/image/replace/image_02.png",
-"type": "image",
-"composition": "main",
-"layerName": "image_01"
-},
-
-
-{	
-"src": "file:///C:/Users/karen.movsesyan/OneDrive/Previs/Previs.Studio/Production/Templates/Test_Scenes/scene-01/Ae/Sources/video/replace/anim_01.mp4",
-"type": "video",
-"composition": "main",
-"layerName": "video_01"
-},
-
-
-
-{	
-"src": "file:///C:/Users/karen.movsesyan/OneDrive/Previs/Previs.Studio/Production/Templates/Test_Scenes/scene-01/Ae/Sources/audio/replace/voice-replace.wav",
-"type": "audio",
-"composition": "main",
-"layerName": "voice"
-},
-
-
-
-
-{
-"type": "data",
-"composition": "main",
-"layerName": "text-here",
-"property": "Effects.Fill.Color",
-"value": [0, 0, 0]
-},
-
-
-{
-"type": "data",
-"composition": "main",
-"layerName": "text-here",
-"property": "Scale",
-"value": [100, 100]
-},
-
-
-{
-"type": "data",
-"composition": "main",
-"layerName": "text-here",
-"property": "Source Text.font",
-"value": "Arial-BoldItalicMT"
-},
-
-{
-"type": "data",
-"composition": "main",
-"layerName": "text-here",
-"property": "Source Text",
-"value": "Hello Edvard"
-}
-],
-
-
-
-"actions":{
-"postrender": [
-{
-"module": "@nexrender/action-encode",
-"preset": "mp4",
-"output": "encoded.mp4"
-},
-{
-"module": "@nexrender/action-copy",
-"input": "encoded.mp4",
-"output": "C:/Users/karen.movsesyan/OneDrive/Previs/Previs.Studio/Production/Templates/Test_Scenes/scene-01/Export/test-preview.mp4"
-}
-]
-}
+  "template": {
+    "src": "file:///C:/Users/Edgar/Desktop/Previs/PrevisStudio/server/Ae/ae_1/Ae/animation-01.aep",
+    "composition": "main",
+    "frameStart": "00000",
+    "frameEnd": "00150"
+  },
+  "assets": [
+    {
+      "src": "file:///C:/Users/Edgar/Desktop/Previs/PrevisStudio/server/Ae/ae_1/Ae/Sources/image/replace/image_02.png",
+      "type": "image",
+      "composition": "main",
+      "layerName": "image_01"
+    },
+    {
+      "src": "file:///C:/Users/Edgar/Desktop/Previs/PrevisStudio/server/Ae/ae_1/Ae/Sources/audio/replace/voice-replace.wav",
+      "type": "audio",
+      "composition": "main",
+      "layerName": "voice"
+    },
+    {
+      "type": "data",
+      "composition": "main",
+      "layerName": "text-here",
+      "property": "Effects.Fill.Color",
+      "value": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "type": "data",
+      "composition": "main",
+      "layerName": "text-here",
+      "property": "Scale",
+      "value": [
+        100,
+        100
+      ]
+    },
+    {
+      "type": "data",
+      "composition": "main",
+      "layerName": "text-here",
+      "property": "Source Text.font",
+      "value": "Arial-BoldItalicMT"
+    },
+    {
+      "type": "data",
+      "composition": "main",
+      "layerName": "text-here",
+      "property": "Source Text",
+      "value": ""
+    }
+  ],
+  "actions": {
+    "postrender": [
+      {
+        "module": "@nexrender/action-encode",
+        "preset": "mp4",
+        "output": "encoded.mp4"
+      },
+      {
+        "module": "@nexrender/action-copy",
+        "input": "encoded.mp4",
+        "output": "C:/Users/Edgar/Desktop/Previs/PrevisStudio/server/Ae/ae_1/Export/test-preview.mp4"
+      }
+    ]
+  }
 }

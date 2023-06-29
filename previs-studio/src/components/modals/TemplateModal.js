@@ -24,7 +24,7 @@ function TemplateModal({show, setShow, templateId}) {
                         <div className='template-modal'>
                             <div className='modal-video'>
                                 <ReactPlayer
-                                    url={template.name}
+                                    url={template.src}
                                     controls={true}
                                     style={{borderRadius: '20px', width: '100%', height: '100%'}}
                                 />

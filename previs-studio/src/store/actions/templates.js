@@ -31,3 +31,37 @@ export function clearSingleTemplate() {
         type: CLEAR_SINGLE_TEMPLATE,
     }
 }
+
+export const VIDEO_RENDER = 'VIDEO_RENDER'
+export const VIDEO_RENDER_FAIL = 'VIDEO_RENDER_FAIL'
+export const VIDEO_RENDER_SUCCESS = 'VIDEO_RENDER_SUCCESS'
+
+export function videoRenderAction (templatesData) {
+    return {
+        type: VIDEO_RENDER,
+        payload: {
+            templatesData
+        }
+    }
+}
+
+export const RETURN_TO_EDIT = 'RETURN_TO_EDIT'
+
+export function returnToEdit() {
+    return {
+        type: RETURN_TO_EDIT,
+    }
+}
+
+export const VIDEO_SHOT = 'VIDEO_SHOT'
+export const VIDEO_SHOT_FAIL = 'VIDEO_SHOT_FAIL'
+export const VIDEO_SHOT_SUCCESS = 'VIDEO_SHOT_SUCCESS'
+
+export function shotAction (id) {
+    return {
+        type: VIDEO_SHOT,
+        payload: {
+            id
+        }
+    }
+}

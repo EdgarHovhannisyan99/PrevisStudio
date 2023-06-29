@@ -1,0 +1,71 @@
+{
+  "template": {
+    "src": "file:///C:/Users/Edgar/Desktop/Previs/PrevisStudio/server/Ae/ae_2/Ae/animation-01.aep",
+    "composition": "main",
+    "frameStart": "00000",
+    "frameEnd": "00250"
+  },
+  "assets": [
+    {
+      "src": "file:///C:/Users/Edgar/Desktop/Previs/PrevisStudio/server/Ae/ae_2/Ae/Sources/image/replace/image_02.png",
+      "type": "image",
+      "composition": "main",
+      "layerName": "image_01"
+    },
+    {
+      "src": "file:///C:/Users/Edgar/Desktop/Previs/PrevisStudio/server/Ae/ae_2/Ae/Sources/audio/replace/voice-replace.wav",
+      "type": "audio",
+      "composition": "main",
+      "layerName": "voice"
+    },
+    {
+      "type": "data",
+      "composition": "main",
+      "layerName": "text-here",
+      "property": "Effects.Fill.Color",
+      "value": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "type": "data",
+      "composition": "main",
+      "layerName": "text-here",
+      "property": "Scale",
+      "value": [
+        90,
+        90
+      ]
+    },
+    {
+      "type": "data",
+      "composition": "main",
+      "layerName": "text-here",
+      "property": "Source Text.font",
+      "value": "Helvetica"
+    },
+    {
+      "type": "data",
+      "composition": "main",
+      "layerName": "text-here",
+      "property": "Source Text",
+      "value": "Hello Edgar"
+    }
+  ],
+  "actions": {
+    "postrender": [
+      {
+        "module": "@nexrender/action-encode",
+        "preset": "mp4",
+        "output": "encoded.mp4"
+      },
+      {
+        "module": "@nexrender/action-copy",
+        "input": "encoded.mp4",
+        "output": "C:/Users/Edgar/Desktop/Previs/PrevisStudio/server/Ae/ae_2/Export/test-preview.mp4"
+      }
+    ]
+  }
+}

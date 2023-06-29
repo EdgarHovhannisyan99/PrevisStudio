@@ -8,7 +8,8 @@
     "dev": "nodemon  -r esm -r dotenv/config ./bin/www"
   },
   "dependencies": {
-    "@nexrender/core": "^1.43.1",
+    "@nexrender/core": "^1.43.3",
+    "@nexrender/types": "^1.43.1",
     "bluebird": "^3.7.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -23,6 +24,8 @@
     "mysql2": "^3.3.1",
     "nexrender": "^1.0.1",
     "nodemon": "^2.0.22",
-    "sequelize": "^6.31.1"
+    "puppeteer": "^20.4.0",
+    "sequelize": "^6.31.1",
+    "socket.io": "^4.6.2"
   }
 }

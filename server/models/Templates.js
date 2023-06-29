@@ -22,6 +22,10 @@ Templates.init(
 			type: DataTypes.STRING,
 			allowNull: true,
 		},
+		src: {
+			type: DataTypes.STRING,
+			allowNull: true,
+		},
 		title: {
 			type: DataTypes.STRING,
 			allowNull: true,

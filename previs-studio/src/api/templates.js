@@ -13,4 +13,16 @@ export default class templates {
     static getSingleTemplates(id) {
         return api.get(`templates/single/${id}`)
     }
+
+    static videoRender(templatesData) {
+        return api.post(`templates/render`,  {
+            ...templatesData
+        })
+    }
+
+    static videShot(id) {
+        return api.post(`templates/shot`,  {
+            id
+        })
+    }
 }

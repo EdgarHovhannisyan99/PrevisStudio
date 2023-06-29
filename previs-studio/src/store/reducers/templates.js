@@ -3,7 +3,12 @@ import {
     GET_ALL_TEMPLATES,
     GET_ALL_TEMPLATES_FAIL,
     GET_ALL_TEMPLATES_SUCCESS,
-    GET_SINGLE_TEMPLATE, GET_SINGLE_TEMPLATE_FAIL, GET_SINGLE_TEMPLATE_SUCCESS
+    GET_SINGLE_TEMPLATE,
+    GET_SINGLE_TEMPLATE_FAIL,
+    GET_SINGLE_TEMPLATE_SUCCESS,
+    RETURN_TO_EDIT,
+    VIDEO_RENDER,
+    VIDEO_RENDER_SUCCESS, VIDEO_SHOT, VIDEO_SHOT_SUCCESS
 } from "../actions/templates";
 
 
@@ -11,6 +16,7 @@ const initialState = {
     templatesList: [],
     singleTemplate: {},
     templatesListStatus: '',
+    generatingStatus: '',
     singleTemplateStatus: '',
     count: 0
 };
@@ -64,12 +70,47 @@ export default function reducer(state = initialState, action) {
         }
 
         case CLEAR_SINGLE_TEMPLATE: {
-            console.log('reduxer')
             return {
                 ...state,
                 singleTemplate: {},
             };
         }
+
+        case VIDEO_RENDER: {
+            return {
+                ...state,
+                generatingStatus: 'generate',
+            };
+        }
+
+        case VIDEO_SHOT: {
+            return {
+                ...state,
+                generatingStatus: 'generate',
+            };
+        }
+
+        case VIDEO_SHOT_SUCCESS: {
+            return {
+                ...state,
+                generatingStatus: 'success',
+            };
+        }
+
+        case VIDEO_RENDER_SUCCESS: {
+            return {
+                ...state,
+                generatingStatus: 'success',
+            };
+        }
+
+        case RETURN_TO_EDIT: {
+            return {
+                ...state,
+                generatingStatus: '',
+            };
+        }
+
 
         default: {
             return state;
